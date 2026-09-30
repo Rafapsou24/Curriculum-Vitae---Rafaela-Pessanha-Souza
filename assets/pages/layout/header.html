@@ -1,0 +1,87 @@
+<header class="header">
+    <nav class="bg-red-800 shadow-sm">
+        <div class="w-full px-4">
+            <div class="flex items-center h-16">
+
+                <!-- Botão Hamburguer (só no mobile) -->
+                <button id="menu-toggle" 
+                        class="lg:hidden bg-white p-2 rounded-md border border-gray-300"
+                        aria-label="Open menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" 
+                         class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" 
+                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                         viewBox="0 0 24 24">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+
+                <!-- Menu (desktop + mobile colapsável) -->
+                <div id="navbar-menu" 
+                     class="hidden lg:flex lg:items-center lg:justify-between w-full">
+
+                    <!-- Menu à esquerda -->
+                    <ul class="flex flex-col lg:flex-row lg:items-center gap-0 lg:gap-1 mt-2 lg:mt-0 w-full lg:w-auto">
+                        <li>
+                            <a class="block px-3 py-2 text-white font-medium rounded-md hover:bg-white/10 transition" 
+                               href="#">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a class="block px-3 py-2 text-white font-medium rounded-md hover:bg-white/10 transition" 
+                               href="#">
+                                Contact
+                            </a>
+                        </li>
+
+                        <!-- Dropdown Projects -->
+                        <li class="relative group">
+                            <button class="w-full lg:w-auto text-left px-3 py-2 text-white font-medium rounded-md hover:bg-white/10 transition flex items-center justify-between lg:justify-start gap-2">
+                                Projects
+                                <span class="text-xs transition group-hover:rotate-180">▾</span>
+                            </button>
+                            <ul class="lg:absolute lg:right-0 lg:top-full lg:mt-2 w-full lg:w-56 bg-white text-gray-800 
+                                       rounded-md lg:shadow-xl lg:border lg:border-gray-100 py-2
+                                       lg:opacity-0 lg:invisible group-hover:lg:opacity-100 group-hover:lg:visible 
+                                       lg:transition-all lg:duration-200">
+                                <li>
+                                    <a class="block px-4 py-2 text-sm hover:bg-gray-100" href="#">
+                                        Project-1
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="block px-4 py-2 text-sm hover:bg-gray-100" href="#">
+                                        Project-2
+                                    </a>
+                                </li>
+                                <li>
+                                    <hr class="my-1 border-gray-200">
+                                </li>
+                                <li>
+                                    <a class="block px-4 py-2 text-sm hover:bg-gray-100" href="#">
+                                        Project-3
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        // Toggle do menu mobile
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('navbar-menu');
+        
+        if (toggle && menu) {
+            toggle.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</header>
+
